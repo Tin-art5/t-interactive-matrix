@@ -3,12 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive 5x7 Matrix with Modal</title>
+<title>Interactive 5x7 Matrix - Chic Version</title>
 <style>
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f5f5;
     padding: 20px;
+    color: #333;
   }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+
   .matrix {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -16,64 +25,93 @@
     max-width: 1200px;
     margin: auto;
   }
+
   .cell {
-    background-color: #4CAF50; /* Green Square theme */
-    color: white;
-    padding: 15px;
+    background-color: #e6f2ea; /* light subtle green */
+    color: #1b3a2a; /* dark green text */
+    padding: 18px 12px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  .cell:hover {
-    background-color: #45a049;
-  }
-  .header {
-    background-color: #2e7d32;
-    font-weight: bold;
-    cursor: default;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Modal styles */
+  .cell:hover {
+    background-color: #d4e6d2; /* slightly darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .header {
+    background-color: #b0d4b1; /* soft muted green */
+    font-weight: 600;
+    cursor: default;
+    color: #0f2d15;
+  }
+
+  .row-header {
+    background-color: #c9e3c7; /* slightly brighter row headers */
+    font-weight: 600;
+    cursor: default;
+    color: #0f2d15;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  /* Modal */
   .modal {
-    display: none; /* Hidden by default */
-    position: fixed; 
+    display: none;
+    position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
   }
+
   .modal-content {
-    background-color: #fefefe;
+    background-color: #fff;
     margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     width: 80%;
     max-width: 600px;
-    color: #000;
+    color: #333;
     text-align: left;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    font-size: 0.95rem;
   }
+
   .close {
-    color: #aaa;
+    color: #888;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    transition: color 0.2s;
   }
+
   .close:hover {
-    color: black;
+    color: #333;
   }
+
 </style>
 </head>
 <body>
 
-<h2 style="text-align:center;">Interactive 5x7 Matrix</h2>
+<h2>Interactive 5x7 Matrix</h2>
 
 <div class="matrix">
   <!-- Row 0: Column Titles -->
+  <div class="cell header"> </div>
   <div class="cell header">Art</div>
   <div class="cell header">Citizenship</div>
   <div class="cell header">Computing</div>
@@ -83,40 +121,41 @@
   <div class="cell header">Science</div>
 
   <!-- Row 1: WHAT -->
-  <div class="cell" data-text="Investigating a Climate Challenge/ Learning about Nature">WHAT</div>
-  <div class="cell" data-text="Make a visual representation of nature now and in the future, adding short TL labels.">WHAT</div>
-  <div class="cell" data-text="Research local recycling schemes and co-write a class manifesto in TL.">WHAT</div>
-  <div class="cell" data-text="Investigate the energy use of your online activities and present findings in TL.">WHAT</div>
-  <div class="cell" data-text="Prototype a sustainable product and label it in TL.">WHAT</div>
-  <div class="cell" data-text="Create a bilingual info poster on global pollution or deforestation.">WHAT</div>
-  <div class="cell" data-text="Gather data on recycling habits and present findings in TL graphs. Compare renewable energy sources and create an infographic in TL.">WHAT</div>
+  <div class="cell row-header">WHAT: Investigating a Climate Challenge / Learning about Nature</div>
+  <div class="cell" data-text="Make a visual representation of nature now and in the future, adding short TL labels.">?</div>
+  <div class="cell" data-text="Research local recycling schemes and co-write a class manifesto in TL.">?</div>
+  <div class="cell" data-text="Investigate the energy use of your online activities and present findings in TL.">?</div>
+  <div class="cell" data-text="Prototype a sustainable product and label it in TL.">?</div>
+  <div class="cell" data-text="Create a bilingual info poster on global pollution or deforestation.">?</div>
+  <div class="cell" data-text="Gather data on recycling habits and present findings in TL graphs. Compare renewable energy sources and create an infographic in TL.">?</div>
 
   <!-- Row 2: WHO -->
-  <div class="cell" data-text="Create a new sustainable fashion brand story in TL with its logo and slogan">WHO</div>
-  <div class="cell" data-text="Interview a volunteer or eco leader and record a TL podcast.">WHO</div>
-  <div class="cell" data-text="Create a digital presentation in TL about a changemaker, followed by a quiz with pictures and audio.">WHO</div>
-  <div class="cell" data-text="Investigate sustainable design innovators; create a bilingual showcase.">WHO</div>
-  <div class="cell" data-text="Describe the work of an eco-activist from around the world in TL.">WHO</div>
-  <div class="cell" data-text="Use numbers to illustrate an eco-hero’s effect and add TL captions.">WHO</div>
-  <div class="cell" data-text="Study a scientist who is improving biodiversity; create a TL profile for them.">WHO</div>
+  <div class="cell row-header">WHO: Stories of Action</div>
+  <div class="cell" data-text="Create a new sustainable fashion brand story in TL with its logo and slogan">?</div>
+  <div class="cell" data-text="Interview a volunteer or eco leader and record a TL podcast.">?</div>
+  <div class="cell" data-text="Create a digital presentation in TL about a changemaker, followed by a quiz with pictures and audio.">?</div>
+  <div class="cell" data-text="Investigate sustainable design innovators; create a bilingual showcase.">?</div>
+  <div class="cell" data-text="Describe the work of an eco-activist from around the world in TL.">?</div>
+  <div class="cell" data-text="Use numbers to illustrate an eco-hero’s effect and add TL captions.">?</div>
 
   <!-- Row 3: WHY -->
-  <div class="cell" data-text="Create artwork showing “my future job for the planet” with TL captions.">WHY</div>
-  <div class="cell" data-text="Discuss why people choose green careers; create a TL interview or role-play.">WHY</div>
-  <div class="cell" data-text="Design a TL digital campaign: “Careers that change our climate future.”">WHY</div>
-  <div class="cell" data-text="Present eco-design jobs or inventions; create a bilingual mini-portfolio.">WHY</div>
-  <div class="cell" data-text="Predict positive future environmental changes; describe what makes a “green city.”">WHY</div>
-  <div class="cell" data-text="Create a visual chart of future sustainable jobs and explain in TL.">WHY</div>
-  <div class="cell" data-text="Explore sustainability-focused careers in science; write TL job profiles.">WHY</div>
+  <div class="cell row-header">WHY: Imagining Green Futures & Eco-Careers</div>
+  <div class="cell" data-text="Create artwork showing “my future job for the planet” with TL captions.">?</div>
+  <div class="cell" data-text="Discuss why people choose green careers; create a TL interview or role-play.">?</div>
+  <div class="cell" data-text="Design a TL digital campaign: “Careers that change our climate future.”">?</div>
+  <div class="cell" data-text="Present eco-design jobs or inventions; create a bilingual mini-portfolio.">?</div>
+  <div class="cell" data-text="Predict positive future environmental changes; describe what makes a “green city.”">?</div>
+  <div class="cell" data-text="Create a visual chart of future sustainable jobs and explain in TL.">?</div>
 
   <!-- Row 4: HOW -->
-  <div class="cell" data-text="“A day in my eco-life” collage with TL captions.">HOW</div>
-  <div class="cell" data-text="Create a school eco pledge; multilingual posters for corridors.">HOW</div>
-  <div class="cell" data-text="Build a simple “eco habit tracker” app with TL interface text.">HOW</div>
-  <div class="cell" data-text="Build a recycled-object prototype; add TL instructions.">HOW</div>
-  <div class="cell" data-text="Track, write, and compare short TL diary entries on personal eco-habits.">HOW</div>
-  <div class="cell" data-text="Estimate school energy use; describe improvements in TL.">HOW</div>
-  <div class="cell" data-text="Investigate how solar panels work and create a bilingual poster.">HOW</div>
+  <div class="cell row-header">HOW: Everyday Choices</div>
+  <div class="cell" data-text="“A day in my eco-life” collage with TL captions.">?</div>
+  <div class="cell" data-text="Create a school eco pledge; multilingual posters for corridors.">?</div>
+  <div class="cell" data-text="Build a simple “eco habit tracker” app with TL interface text.">?</div>
+  <div class="cell" data-text="Build a recycled-object prototype; add TL instructions.">?</div>
+  <div class="cell" data-text="Track, write, and compare short TL diary entries on personal eco-habits.">?</div>
+  <div class="cell" data-text="Estimate school energy use; describe improvements in TL.">?</div>
+  <div class="cell" data-text="Investigate how solar panels work and create a bilingual poster.">?</div>
 </div>
 
 <!-- Modal -->
@@ -134,7 +173,7 @@
 
   document.querySelectorAll('.cell').forEach(cell => {
     const text = cell.getAttribute('data-text');
-    if (text) { // Only cells with data-text are clickable
+    if (text) {
       cell.addEventListener('click', () => {
         modalText.innerText = text;
         modal.style.display = 'block';
@@ -142,15 +181,8 @@
     }
   });
 
-  closeBtn.onclick = function() {
-    modal.style.display = 'none';
-  }
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = 'none';
-    }
-  }
+  closeBtn.onclick = () => modal.style.display = 'none';
+  window.onclick = event => { if (event.target == modal) modal.style.display = 'none'; }
 </script>
 
 </body>
