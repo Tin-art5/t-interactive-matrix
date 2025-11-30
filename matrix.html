@@ -1,130 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>MFL Cross-Curricular Eco Learning Matrix</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Curriculum Matrix</title>
 
 <style>
-/* ---------------------------------------------------------
-   TYPOGRAPHY + BASE
---------------------------------------------------------- */
-body {
-    font-family: "Inter", Arial, sans-serif;
-    background: #f6f7f4;
-    margin: 0;
-    padding: 40px 20px;
-    color: #2c2c2c;
-}
-
-h1 {
-    font-family: "Segoe UI", Helvetica, Arial;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    letter-spacing: 0.3px;
-}
-
-/* Optional subtitle placeholder */
-.subtitle {
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 30px;
-    color: #666;
-    font-size: 1rem;
-}
-
-/* ---------------------------------------------------------
-   GRID LAYOUT
---------------------------------------------------------- */
-.matrix {
-    display: grid;
-    grid-template-columns: 260px repeat(6, 1fr);
-    border: 1px solid #d0d7cd;
-    border-radius: 10px;
-    overflow: hidden;
-    max-width: 1400px;
-    margin: 0 auto;
-    background: white;
-}
-
-/* Shared cell style */
-.cell {
-    padding: 16px 18px;
-    border-bottom: 1px solid #e3e6e1;
-    border-right: 1px solid #e3e6e1;
-    font-size: 0.92rem;
-    line-height: 1.32rem;
-}
-
-/* Column header row */
-.header-col {
-    background: #e7ece7;
-    font-weight: 600;
-    text-align: center;
-    border-bottom: 2px solid #d2d8d2;
-}
-
-/* Row titles (left column) */
-.header-row {
-    background: #f0f4ef;
-    font-weight: 700;
-    font-size: 1rem;
-    border-right: 2px solid #d2d8d2;
-}
-
-/* Hover effect for screen ONLY */
-@media screen {
-    .cell:hover {
-        background: #f5f8f4;
-    }
-}
-
-/* ---------------------------------------------------------
-   PRINT MODE — pure black & white, no shading, no page breaks
---------------------------------------------------------- */
-@media print {
     body {
-        padding: 0;
-        background: white;
+        font-family: "Inter", Arial, sans-serif;
+        background: #f7f8f5;
+        margin: 0;
+        padding: 40px;
+        color: #2d2d2d;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
     }
     .matrix {
-        border: 1px solid black;
+        display: grid;
+        grid-template-columns: 220px repeat(6, 1fr);
+        border-collapse: collapse;
+        max-width: 1400px;
+        margin: 0 auto;
+        border-radius: 8px;
+        overflow: hidden;
     }
-    .cell, .header-col, .header-row {
-        background: white !important;
-        color: black !important;
-        border: 1px solid black !important;
+    .cell {
+        padding: 16px;
+        border: 1px solid #e2e7e1;
+        background: #ffffff;
+        font-size: 0.92rem;
+        line-height: 1.35rem;
+        transition: background 0.2s;
     }
-    /* Avoid breaking each row across pages */
-    .matrix {
-        page-break-inside: avoid;
+    .cell:hover {
+        background: #eef3ed;
     }
-}
-
-/* ---------------------------------------------------------
-   Narrow screens
---------------------------------------------------------- */
-@media (max-width: 900px) {
-    .matrix {
-        font-size: 0.82rem;
-        grid-template-columns: 200px repeat(6, 1fr);
+    .header-col {
+        background: #dfe8df;
+        font-weight: 600;
+        text-align: center;
+        font-size: 1rem;
     }
-}
+    .header-row {
+        background: #e9f0e8;
+        font-weight: 600;
+        font-size: 1rem;
+    }
 </style>
 </head>
 
 <body>
 
 <h1>MFL Cross-Curricular Eco Learning Matrix</h1>
-<p class="subtitle">(Screen-friendly • Print-friendly • Pastel neutral design)</p>
 
 <div class="matrix">
 
-    <!-- Empty top-left square -->
     <div class="cell header-col"></div>
 
-    <!-- Column headers -->
     <div class="cell header-col">MFL & Art</div>
     <div class="cell header-col">MFL & Citizenship</div>
     <div class="cell header-col">MFL & Design & Technology</div>
@@ -132,7 +67,6 @@ h1 {
     <div class="cell header-col">MFL & Maths</div>
     <div class="cell header-col">MFL & Science</div>
 
-    <!-- WHAT row -->
     <div class="cell header-row">WHAT: Investigating a Challenge</div>
     <div class="cell">Make a visual representation of climate change impact and add TL labels.</div>
     <div class="cell">Research local recycling schemes and co-write a class manifesto in TL.</div>
@@ -141,7 +75,6 @@ h1 {
     <div class="cell">Gather data on school recycling habits and present findings in TL graphs.</div>
     <div class="cell">Compare renewable energy sources and create an infographic in TL.</div>
 
-    <!-- WHO row -->
     <div class="cell header-row">WHO: Stories of Action</div>
     <div class="cell">Create a new sustainable fashion brand story in TL with logo and slogan.</div>
     <div class="cell">Interview a climate enthusiast and record a TL podcast.</div>
@@ -150,7 +83,6 @@ h1 {
     <div class="cell">Use numbers to illustrate an eco-hero’s effect and add TL captions.</div>
     <div class="cell">Study an eco-conscious scientist and create a TL poster on their achievements.</div>
 
-    <!-- WHY row -->
     <div class="cell header-row">WHY: Imagining Green Futures & Eco-Careers</div>
     <div class="cell">Create artwork showing “my future job for the planet” with TL captions.</div>
     <div class="cell">Discuss why people choose ‘green careers’ and express in TL which option could appeal to you.</div>
@@ -159,7 +91,6 @@ h1 {
     <div class="cell">Create a visual chart of future sustainable jobs and explain in TL.</div>
     <div class="cell">Explore sustainability-focused careers in science and write TL job profiles.</div>
 
-    <!-- HOW row -->
     <div class="cell header-row">HOW: Everyday Choices</div>
     <div class="cell">Create “A day in my eco-life” collage with TL captions.</div>
     <div class="cell">Create a school eco pledge and multilingual posters for corridors.</div>
