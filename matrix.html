@@ -1,54 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Curriculum Matrix</title>
+<meta charset="UTF-8">
+<title>MFL Cross-Curricular Eco Learning Matrix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f6f7f4;
+    margin: 0;
+    padding: 40px 20px;
+    color: #2c2c2c;
+}
+
+h1 {
+    font-family: "Segoe UI", Helvetica, Arial;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    letter-spacing: 0.3px;
+}
+
+.matrix {
+    display: grid;
+    grid-template-columns: 260px repeat(6, 1fr);
+    border: 1px solid #d0d7cd;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+}
+
+.cell {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e3e6e1;
+    border-right: 1px solid #e3e6e1;
+    font-size: 0.92rem;
+    line-height: 1.32rem;
+}
+
+.header-col {
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid #d2d8d2;
+}
+
+.header-row {
+    background: #f0f4ef;
+    font-weight: 700;
+    font-size: 1rem;
+    border-right: 2px solid #d2d8d2;
+}
+
+@media screen {
+    .col-art        { background: #f9ebe5; }
+    .col-citizen    { background: #ede9f6; }
+    .col-dt         { background: #e8f4ef; }
+    .col-geo        { background: #e8f0f8; }
+    .col-maths      { background: #f8f6e3; }
+    .col-science    { background: #ecf3ea; }
+    .cell:hover     { background: #f5f8f4; }
+}
+
+@media print {
     body {
-        font-family: "Inter", Arial, sans-serif;
-        background: #f7f8f5;
-        margin: 0;
-        padding: 40px;
-        color: #2d2d2d;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: 600;
+        padding: 0;
+        background: white;
     }
     .matrix {
-        display: grid;
-        grid-template-columns: 220px repeat(6, 1fr);
-        border-collapse: collapse;
-        max-width: 1400px;
-        margin: 0 auto;
-        border-radius: 8px;
-        overflow: hidden;
+        border: 1px solid black;
     }
-    .cell {
-        padding: 16px;
-        border: 1px solid #e2e7e1;
-        background: #ffffff;
-        font-size: 0.92rem;
-        line-height: 1.35rem;
-        transition: background 0.2s;
+    .cell, .header-col, .header-row {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black !important;
     }
-    .cell:hover {
-        background: #eef3ed;
+    .matrix {
+        page-break-inside: avoid;
     }
-    .header-col {
-        background: #dfe8df;
-        font-weight: 600;
-        text-align: center;
-        font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .matrix {
+        font-size: 0.82rem;
+        grid-template-columns: 200px repeat(6, 1fr);
     }
-    .header-row {
-        background: #e9f0e8;
-        font-weight: 600;
-        font-size: 1rem;
-    }
+}
 </style>
 </head>
 
@@ -60,44 +99,44 @@
 
     <div class="cell header-col"></div>
 
-    <div class="cell header-col">MFL & Art</div>
-    <div class="cell header-col">MFL & Citizenship</div>
-    <div class="cell header-col">MFL & Design & Technology</div>
-    <div class="cell header-col">MFL & Geography</div>
-    <div class="cell header-col">MFL & Maths</div>
-    <div class="cell header-col">MFL & Science</div>
+    <div class="cell header-col col-art">MFL & Art</div>
+    <div class="cell header-col col-citizen">MFL & Citizenship</div>
+    <div class="cell header-col col-dt">MFL & Design & Technology</div>
+    <div class="cell header-col col-geo">MFL & Geography</div>
+    <div class="cell header-col col-maths">MFL & Maths</div>
+    <div class="cell header-col col-science">MFL & Science</div>
 
     <div class="cell header-row">WHAT: Investigating a Challenge</div>
-    <div class="cell">Make a visual representation of climate change impact and add TL labels.</div>
-    <div class="cell">Research local recycling schemes and co-write a class manifesto in TL.</div>
-    <div class="cell">Prototype a sustainable product and label it in TL.</div>
-    <div class="cell">Create a bilingual info poster on global pollution or deforestation.</div>
-    <div class="cell">Gather data on school recycling habits and present findings in TL graphs.</div>
-    <div class="cell">Compare renewable energy sources and create an infographic in TL.</div>
+    <div class="cell col-art">Make a visual representation of climate change impact and add TL labels.</div>
+    <div class="cell col-citizen">Research local recycling schemes and co-write a class manifesto in TL.</div>
+    <div class="cell col-dt">Prototype a sustainable product and label it in TL.</div>
+    <div class="cell col-geo">Create a bilingual info poster on global pollution or deforestation.</div>
+    <div class="cell col-maths">Gather data on school recycling habits and present findings in TL graphs.</div>
+    <div class="cell col-science">Compare renewable energy sources and create an infographic in TL.</div>
 
     <div class="cell header-row">WHO: Stories of Action</div>
-    <div class="cell">Create a new sustainable fashion brand story in TL with logo and slogan.</div>
-    <div class="cell">Interview a climate enthusiast and record a TL podcast.</div>
-    <div class="cell">Investigate sustainable design innovators and create a bilingual showcase.</div>
-    <div class="cell">Describe in TL the work of an eco-activist from around the world.</div>
-    <div class="cell">Use numbers to illustrate an eco-hero’s effect and add TL captions.</div>
-    <div class="cell">Study an eco-conscious scientist and create a TL poster on their achievements.</div>
+    <div class="cell col-art">Create a new sustainable fashion brand story in TL with logo and slogan.</div>
+    <div class="cell col-citizen">Interview a climate enthusiast and record a TL podcast.</div>
+    <div class="cell col-dt">Investigate sustainable design innovators and create a bilingual showcase.</div>
+    <div class="cell col-geo">Describe in TL the work of an eco-activist from around the world.</div>
+    <div class="cell col-maths">Use numbers to illustrate an eco-hero’s effect and add TL captions.</div>
+    <div class="cell col-science">Study an eco-conscious scientist and create a TL poster on their achievements.</div>
 
     <div class="cell header-row">WHY: Imagining Green Futures & Eco-Careers</div>
-    <div class="cell">Create artwork showing “my future job for the planet” with TL captions.</div>
-    <div class="cell">Discuss why people choose ‘green careers’ and express in TL which option could appeal to you.</div>
-    <div class="cell">Present eco-design jobs or inventions and create a bilingual mini-portfolio.</div>
-    <div class="cell">Predict positive future environmental changes and describe what makes a ‘green city’.</div>
-    <div class="cell">Create a visual chart of future sustainable jobs and explain in TL.</div>
-    <div class="cell">Explore sustainability-focused careers in science and write TL job profiles.</div>
+    <div class="cell col-art">Create artwork showing “my future job for the planet” with TL captions.</div>
+    <div class="cell col-citizen">Discuss why people choose ‘green careers’ and express in TL which option could appeal to you.</div>
+    <div class="cell col-dt">Present eco-design jobs or inventions and create a bilingual mini-portfolio.</div>
+    <div class="cell col-geo">Predict positive future environmental changes and describe what makes a ‘green city’.</div>
+    <div class="cell col-maths">Create a visual chart of future sustainable jobs and explain in TL.</div>
+    <div class="cell col-science">Explore sustainability-focused careers in Science and write TL job profiles.</div>
 
     <div class="cell header-row">HOW: Everyday Choices</div>
-    <div class="cell">Create “A day in my eco-life” collage with TL captions.</div>
-    <div class="cell">Create a school eco pledge and multilingual posters for corridors.</div>
-    <div class="cell">Build a recycled-object prototype and add TL labels.</div>
-    <div class="cell">Track, write, and compare short TL diary entries on personal eco-habits.</div>
-    <div class="cell">Estimate school energy use and describe improvements in TL.</div>
-    <div class="cell">Investigate how solar panels work and create a bilingual poster.</div>
+    <div class="cell col-art">Create “A day in my eco-life” collage with TL captions.</div>
+    <div class="cell col-citizen">Create a school eco pledge and multilingual posters for corridors.</div>
+    <div class="cell col-dt">Build a recycled-object prototype and add TL labels.</div>
+    <div class="cell col-geo">Track, write, and compare short TL diary entries on personal eco-habits.</div>
+    <div class="cell col-maths">Estimate school energy use and describe improvements in TL.</div>
+    <div class="cell col-science">Investigate how everyday choices (like recycling, saving water, or walking to school) make a difference and create a bilingual presentation.</div>
 
 </div>
 
