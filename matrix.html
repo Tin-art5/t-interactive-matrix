@@ -1,180 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>MFL Cross-Curricular Eco Learning Matrix</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-/* ---------------------------------------------------------
-   TYPOGRAPHY + BASE
---------------------------------------------------------- */
-body {
-    font-family: "Inter", Arial, sans-serif;
-    background: #f6f7f4;
-    margin: 0;
-    padding: 40px 20px;
-    color: #2c2c2c;
-}
+  table.project-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
 
-h1 {
-    font-family: "Segoe UI", Helvetica, Arial;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    letter-spacing: 0.3px;
-}
+  table.project-matrix th,
+  table.project-matrix td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
 
-.subtitle {
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 30px;
-    color: #666;
-    font-size: 1rem;
-}
+  table.project-matrix th {
+    background-color: #dbe9e0; /* pastel green */
+    color: #333;
+    font-weight: bold;
+  }
 
-/* ---------------------------------------------------------
-   GRID LAYOUT
---------------------------------------------------------- */
-.matrix {
-    display: grid;
-    grid-template-columns: 260px repeat(6, 1fr);
-    border: 1px solid #d0d7cd;
-    border-radius: 10px;
-    overflow: auto; /* allow horizontal scroll if needed */
-    max-width: 100%;
-    margin: 0 auto;
-    background: white;
-}
+  table.project-matrix tr:nth-child(even) td {
+    background-color: #f7f7f7; /* light neutral for stripes */
+  }
 
-/* Shared cell style */
-.cell {
-    padding: 16px 18px;
-    border-bottom: 1px solid #e3e6e1;
-    border-right: 1px solid #e3e6e1;
-    font-size: 0.92rem;
-    line-height: 1.32rem;
-    word-wrap: break-word;
-}
+  table.project-matrix tr:hover td {
+    background-color: #e0f2f1; /* subtle hover effect */
+  }
 
-/* Column header row */
-.header-col {
-    background: #e7ece7;
-    font-weight: 600;
-    text-align: center;
-    border-bottom: 2px solid #d2d8d2;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-}
-
-/* Row titles (left column) */
-.header-row {
-    background: #f0f4ef;
-    font-weight: 700;
-    font-size: 1rem;
-    border-right: 2px solid #d2d8d2;
-    line-height: 1.2rem;
-    position: sticky;
-    left: 0;
-    z-index: 3;
-}
-
-/* Hover effect for screen ONLY */
-@media screen {
-    .cell:hover {
-        background: #f5f8f4;
+  @media print {
+    table.project-matrix th,
+    table.project-matrix td {
+      background-color: #fff !important;
+      color: #000 !important;
     }
-}
-
-/* ---------------------------------------------------------
-   PRINT MODE — pure black & white, no shading, no page breaks
---------------------------------------------------------- */
-@media print {
-    body {
-        padding: 0;
-        background: white;
-    }
-    .matrix {
-        border: 1px solid black;
-    }
-    .cell, .header-col, .header-row {
-        background: white !important;
-        color: black !important;
-        border: 1px solid black !important;
-    }
-    .matrix {
-        page-break-inside: avoid;
-    }
-}
-
-/* ---------------------------------------------------------
-   Narrow screens
---------------------------------------------------------- */
-@media (max-width: 900px) {
-    .matrix {
-        font-size: 0.82rem;
-        grid-template-columns: 200px repeat(6, 1fr);
-    }
-}
+  }
 </style>
-</head>
 
-<body>
-
-<h1>MFL Cross-Curricular Eco Learning Matrix</h1>
-<p class="subtitle">(Screen-friendly • Print-friendly • Pastel neutral design)</p>
-
-<div class="matrix">
-
-    <!-- Empty top-left square -->
-    <div class="cell header-col"></div>
-
-    <!-- Column headers -->
-    <div class="cell header-col">MFL & Art</div>
-    <div class="cell header-col">MFL & Citizenship</div>
-    <div class="cell header-col">MFL & Design & Technology</div>
-    <div class="cell header-col">MFL & Geography</div>
-    <div class="cell header-col">MFL & Maths</div>
-    <div class="cell header-col">MFL & Science</div>
-
-    <!-- WHAT row -->
-    <div class="cell header-row">WHAT?<br>Investigating a Challenge</div>
-    <div class="cell">Make a visual representation of climate change impact and add TL labels.</div>
-    <div class="cell">Research local recycling schemes and co-write a class manifesto in TL.</div>
-    <div class="cell">Prototype a sustainable product and label it in TL.</div>
-    <div class="cell">Create a bilingual info poster on global pollution or deforestation.</div>
-    <div class="cell">Gather data on school recycling habits and present findings in TL graphs.</div>
-    <div class="cell">Compare renewable energy sources and create an infographic in TL.</div>
-
-    <!-- WHO row -->
-    <div class="cell header-row">WHO?<br>Stories of Action</div>
-    <div class="cell">Create a new sustainable fashion brand story in TL with logo and slogan.</div>
-    <div class="cell">Interview a climate enthusiast and record a TL podcast.</div>
-    <div class="cell">Investigate sustainable design innovators and create a bilingual showcase.</div>
-    <div class="cell">Describe in TL the work of an eco-activist from around the world.</div>
-    <div class="cell">Use numbers to illustrate an eco-hero’s effect and add TL captions.</div>
-    <div class="cell">Study an eco-conscious scientist and create a TL poster on their achievements.</div>
-
-    <!-- WHY row -->
-    <div class="cell header-row">WHY?<br>Imagining Green Futures & Eco-Careers</div>
-    <div class="cell">Create artwork showing “my future job for the planet” with TL captions.</div>
-    <div class="cell">Discuss why people choose ‘green careers’ and express in TL which option could appeal to you.</div>
-    <div class="cell">Research eco-design jobs or inventions and create a bilingual mini-portfolio.</div>
-    <div class="cell">Predict positive future environmental changes and describe what makes a ‘green city’.</div>
-    <div class="cell">Use numbers to compare how different sustainable jobs reduce carbon emissions and explain your findings in TL.</div>
-    <div class="cell">Explore sustainability-focused careers in science and write TL job profiles.</div>
-
-    <!-- HOW row -->
-    <div class="cell header-row">HOW?<br>Everyday Choices</div>
-    <div class="cell">Create “A day in my eco-life” collage with TL captions.</div>
-    <div class="cell">Create a school eco pledge and multilingual posters for corridors.</div>
-    <div class="cell">Build a recycled-object prototype and add TL labels.</div>
-    <div class="cell">Track, write, and compare short TL diary entries on personal eco-habits.</div>
-    <div class="cell">Estimate your school’s energy use and describe possible improvements in TL.</div>
-    <div class="cell">Investigate how solar panels work and create a bilingual poster.</div>
-
-</div>
-
-</body>
-</html>
+<table class="project-matrix">
+  <thead>
+    <tr>
+      <th>Theme</th>
+      <th>MFL Focus / Other Subjects</th>
+      <th>Project Ideas / Tasks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WHAT: Investigating a Challenge</td>
+      <td>MFL / Science, Geography</td>
+      <td>Students research a local environmental issue (e.g., pollution, biodiversity loss) in the target language. Present findings as posters, podcasts, or short videos.</td>
+    </tr>
+    <tr>
+      <td>WHO: Stories of Action</td>
+      <td>MFL / History, Citizenship, Media Studies</td>
+      <td>Students study real-world environmental activists (local or global) and create biographies or interviews in the target language. Present as written reports, comics, or short films.</td>
+    </tr>
+    <tr>
+      <td>WHY: Imagining Green Futures & Eco-Careers</td>
+      <td>MFL / Design & Technology</td>
+      <td><strong>Research</strong> sustainable design solutions or eco-friendly projects and present findings in the target language.</td>
+    </tr>
+    <tr>
+      <td>WHY: Imagining Green Futures & Eco-Careers</td>
+      <td>MFL / Maths</td>
+      <td><strong>Use numbers to compare how different sustainable jobs reduce carbon emissions and explain your findings in the target language.</strong></td>
+    </tr>
+    <tr>
+      <td>HOW: Everyday Choices</td>
+      <td>MFL / Maths</td>
+      <td><strong>Estimate your school’s energy use and describe possible improvements in the target language.</strong></td>
+    </tr>
+    <tr>
+      <td>HOW: Everyday Choices</td>
+      <td>MFL / Health, Home Economics</td>
+      <td>Students explore how daily actions affect the environment. Create multilingual guides or campaigns promoting eco-friendly habits (recycling, energy use, diet) with charts, infographics, or short videos.</td>
+    </tr>
+  </tbody>
+</table>
