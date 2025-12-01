@@ -6,9 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* ---------------------------------------------------------
-   TYPOGRAPHY + BASE
---------------------------------------------------------- */
 body {
     font-family: "Inter", Arial, sans-serif;
     background: #f6f7f4;
@@ -25,18 +22,6 @@ h1 {
     letter-spacing: 0.3px;
 }
 
-/* Optional subtitle placeholder */
-.subtitle {
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 30px;
-    color: #666;
-    font-size: 1rem;
-}
-
-/* ---------------------------------------------------------
-   GRID LAYOUT
---------------------------------------------------------- */
 .matrix {
     display: grid;
     grid-template-columns: 260px repeat(6, 1fr);
@@ -48,30 +33,35 @@ h1 {
     background: white;
 }
 
-/* Shared cell style */
 .cell {
     padding: 16px 18px;
     border-bottom: 1px solid #e3e6e1;
     border-right: 1px solid #e3e6e1;
     font-size: 0.92rem;
     line-height: 1.32rem;
+    background-color: #fff; /* default content cell is white */
 }
 
-/* Column header row */
 .header-col {
-    background: #e7ece7;
+    background: #4CAF50;
+    color: #fff;
     font-weight: 600;
     text-align: center;
-    border-bottom: 2px solid #d2d8d2;
+    border-bottom: 2px solid #388E3C;
 }
 
-/* Row titles (left column) */
 .header-row {
-    background: #f0f4ef;
     font-weight: 700;
     font-size: 1rem;
     border-right: 2px solid #d2d8d2;
+    color: #fff;
 }
+
+/* Row header colors */
+.row-what.header-row { background-color: #FFE0B2; color: #2c2c2c; } /* pastel orange */
+.row-who.header-row  { background-color: #B3E5FC; color: #2c2c2c; } /* pastel blue */
+.row-why.header-row  { background-color: #C8E6C9; color: #2c2c2c; } /* pastel green */
+.row-how.header-row  { background-color: #F8BBd0; color: #2c2c2c; } /* pastel pink */
 
 /* Hover effect for screen ONLY */
 @media screen {
@@ -80,9 +70,7 @@ h1 {
     }
 }
 
-/* ---------------------------------------------------------
-   PRINT MODE — pure black & white, no shading, no page breaks
---------------------------------------------------------- */
+/* PRINT MODE */
 @media print {
     body {
         padding: 0;
@@ -96,15 +84,12 @@ h1 {
         color: black !important;
         border: 1px solid black !important;
     }
-    /* Avoid breaking each row across pages */
     .matrix {
         page-break-inside: avoid;
     }
 }
 
-/* ---------------------------------------------------------
-   Narrow screens
---------------------------------------------------------- */
+/* Narrow screens */
 @media (max-width: 900px) {
     .matrix {
         font-size: 0.82rem;
@@ -117,7 +102,6 @@ h1 {
 <body>
 
 <h1>MFL Cross-Curricular Eco Learning Matrix</h1>
-<p class="subtitle">(Screen-friendly • Print-friendly • Pastel neutral design)</p>
 
 <div class="matrix">
 
@@ -133,7 +117,7 @@ h1 {
     <div class="cell header-col">MFL & Science</div>
 
     <!-- WHAT row -->
-    <div class="cell header-row">WHAT: Investigating a Challenge</div>
+    <div class="cell header-row row-what">WHAT: Investigating a Challenge</div>
     <div class="cell">Make a visual representation of climate change impact and add TL labels.</div>
     <div class="cell">Research local recycling schemes and co-write a class manifesto in TL.</div>
     <div class="cell">Prototype a sustainable product and label it in TL.</div>
@@ -142,7 +126,7 @@ h1 {
     <div class="cell">Compare renewable energy sources and create an infographic in TL.</div>
 
     <!-- WHO row -->
-    <div class="cell header-row">WHO: Stories of Action</div>
+    <div class="cell header-row row-who">WHO: Stories of Action</div>
     <div class="cell">Create a new sustainable fashion brand story in TL with logo and slogan.</div>
     <div class="cell">Interview a climate enthusiast and record a TL podcast.</div>
     <div class="cell">Investigate sustainable design innovators and create a bilingual showcase.</div>
@@ -151,7 +135,7 @@ h1 {
     <div class="cell">Study an eco-conscious scientist and create a TL poster on their achievements.</div>
 
     <!-- WHY row -->
-    <div class="cell header-row">WHY: Imagining Green Futures & Eco-Careers</div>
+    <div class="cell header-row row-why">WHY: Imagining Green Futures & Eco-Careers</div>
     <div class="cell">Create artwork showing “my future job for the planet” with TL captions.</div>
     <div class="cell">Discuss why people choose ‘green careers’ and express in TL which option could appeal to you.</div>
     <div class="cell">Research eco-design jobs or inventions and create a bilingual mini-portfolio.</div>
@@ -160,7 +144,7 @@ h1 {
     <div class="cell">Explore sustainability-focused careers in science and write TL job profiles.</div>
 
     <!-- HOW row -->
-    <div class="cell header-row">HOW: Everyday Choices</div>
+    <div class="cell header-row row-how">HOW: Everyday Choices</div>
     <div class="cell">Create “A day in my eco-life” collage with TL captions.</div>
     <div class="cell">Create a school eco pledge and multilingual posters for corridors.</div>
     <div class="cell">Build a recycled-object prototype and add TL labels.</div>
