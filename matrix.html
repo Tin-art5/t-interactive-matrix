@@ -41,56 +41,33 @@ h1 {
     line-height: 1.32rem;
 }
 
-/* ---------------------------------------------------------
-   ROW TITLES (left column) — four pastel greens
---------------------------------------------------------- */
-.what-row { background: #B7E4C7; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #95D5B2; }
-.who-row  { background: #95D5B2; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #70C1A0; }
-.why-row  { background: #70C1A0; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #4DA08B; }
-.how-row  { background: #4DA08B; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #397A6A; }
+/* ROW TITLES (left column) — four distinct pastel greens + icons */
+.what-row { background: #B7E4C7; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #95D5B2; display:flex; gap:10px; align-items:center; }
+.who-row  { background: #95D5B2; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #70C1A0; display:flex; gap:10px; align-items:center; }
+.why-row  { background: #70C1A0; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #4DA08B; display:flex; gap:10px; align-items:center; }
+.how-row  { background: #4DA08B; color: black; font-weight: 700; font-size: 1rem; border-right: 2px solid #397A6A; display:flex; gap:10px; align-items:center; }
 
-/* ---------------------------------------------------------
-   COLUMN HEADERS (top row) — softer pastels for cohesion
---------------------------------------------------------- */
+.icon svg { width: 22px; height: 22px; fill: black; }
+
+/* COLUMN HEADERS (top row) — pastel colours */
 .header-col {
     font-weight: 600;
     font-size: 1.05rem;
     text-align: center;
     color: black;
 }
-
-.header-col:nth-child(2) { background: #A3D5FF; } /* pastel sky blue */
-.header-col:nth-child(3) { background: #FFD8A8; } /* pastel sandy orange */
-.header-col:nth-child(4) { background: #E6C0E6; } /* pastel plum */
-.header-col:nth-child(5) { background: #80E0D0; } /* pastel turquoise */
+.header-col:nth-child(2) { background: #B3E5FC; } /* pastel sky blue */
+.header-col:nth-child(3) { background: #FFE0B2; } /* pastel sandy */
+.header-col:nth-child(4) { background: #E1BEE7; } /* pastel plum */
+.header-col:nth-child(5) { background: #80DEEA; } /* pastel turquoise */
 .header-col:nth-child(6) { background: #FFF59D; } /* pastel yellow */
-.header-col:nth-child(7) { background: #CDECA3; } /* pastel yellow-green */
+.header-col:nth-child(7) { background: #C5E1A5; } /* pastel yellow-green */
 
-/* Hover effect only for body cells */
-.cell:not(.header-col):not(.header-row):hover {
+.cell:not(.header-col):hover {
     background: #f0f8f4;
-}
-
-@media print {
-    body { padding: 0; background: white; }
-    .matrix { border: 1px solid black; }
-    .cell, .header-col, .header-row {
-        background: white !important;
-        color: black !important;
-        border: 1px solid black !important;
-    }
-    .matrix { page-break-inside: avoid; }
-}
-
-@media (max-width: 900px) {
-    .matrix {
-        font-size: 0.82rem;
-        grid-template-columns: 200px repeat(6, 1fr);
-    }
 }
 </style>
 </head>
-
 <body>
 
 <h1>MFL Cross-Curricular Eco Learning Matrix</h1>
@@ -104,7 +81,7 @@ h1 {
     <div class="cell header-col">MFL & Maths</div>
     <div class="cell header-col">MFL & Science</div>
 
-    <div class="cell header-row what-row">WHAT: Investigating a Challenge</div>
+    <div class="cell what-row header-row"><span class="icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></span>WHAT: Investigating a Challenge</div>
     <div class="cell">Make a visual representation of climate change impact and add TL labels.</div>
     <div class="cell">Research local recycling schemes and co-write a class manifesto in TL.</div>
     <div class="cell">Prototype a sustainable product and label it in TL.</div>
@@ -112,7 +89,7 @@ h1 {
     <div class="cell">Gather data on school recycling habits and present findings in TL graphs.</div>
     <div class="cell">Compare renewable energy sources and create an infographic in TL.</div>
 
-    <div class="cell header-row who-row">WHO: Stories of Action</div>
+    <div class="cell who-row header-row"><span class="icon"><svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/></svg></span>WHO: Stories of Action</div>
     <div class="cell">Create a new sustainable fashion brand story in TL with logo and slogan.</div>
     <div class="cell">Interview a climate enthusiast and record a TL podcast.</div>
     <div class="cell">Investigate sustainable design innovators and create a bilingual showcase.</div>
@@ -120,7 +97,7 @@ h1 {
     <div class="cell">Use numbers to illustrate an eco-hero’s effect and add TL captions.</div>
     <div class="cell">Study an eco-changemaker and create a TL poster highlighting their achievements.</div>
 
-    <div class="cell header-row why-row">WHY: Imagining Green Futures</div>
+    <div class="cell why-row header-row"><span class="icon"><svg viewBox="0 0 24 24"><path d="M9 21h6v-1H9v1zm3-20C7.9 1 5 3.9 5 7c0 2.4 1.7 4.4 4 4.9V15c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-3.1c2.3-.5 4-2.5 4-4.9 0-3.1-2.9-6-7-6z"/></svg></span>WHY: Imagining Green Futures</div>
     <div class="cell">Create artwork showing “my future job for the planet” with TL captions.</div>
     <div class="cell">Discuss how all careers can be ‘green careers’ and describe your future eco-role in TL.</div>
     <div class="cell">Research eco-design jobs or inventions and create a bilingual mini-portfolio.</div>
@@ -128,13 +105,14 @@ h1 {
     <div class="cell">Use numerical data to compare how different jobs affect climate change and explain your findings in TL.</div>
     <div class="cell">Explore what climate researchers do and create a TL explanation of why their work matters.</div>
 
-    <div class="cell header-row how-row">HOW: Everyday Choices</div>
+    <div class="cell how-row header-row"><span class="icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 00.11-.64l-1.92-3.32a.5.5 0 00-.61-.22l-2.39.96a7.007 7.007 0 00-1.63-.94l-.36-2.54A.5.5 0 0014.33 2h-4.66a.5.5 0 00-.49.41l-.36 2.54c-.6.24-1.15.55-1.63.94l-2.39-.96a.5.5 0 00-.61.22L2.27 9.1a.5.5 0 00.11.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94L2.38 14.78a.5.5 0 00-.11.64l1.92 3.32c.14.24.43.34.68.22l2.39-.96c.48.39 1.03.7 1.63.94l.36 2.54c.04.24.25.41.49.41h4.66c.24 0 .45-.17.49-.41l.36-2.54c.6-.24 1.15-.55 1.63-.94l2.39.96c.25.12.54.02.68-.22l1.92-3.32a.5.5 0 00-.11-.64l-2.03-1.58zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 8.5 12 8.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg></span>HOW: Everyday Choices</div>
     <div class="cell">Create “A day in my eco-life” collage with TL captions.</div>
     <div class="cell">Create a school eco pledge and multilingual posters for corridors.</div>
     <div class="cell">Build a recycled-object prototype and add TL labels.</div>
     <div class="cell">Track, write, and compare short TL diary entries on personal eco-habits.</div>
     <div class="cell">Estimate your school’s energy use and describe possible improvements in TL.</div>
-    <div class="cell">Investigate how everyday choices (recycling, saving water, walking to school) make a difference and create a bilingual presentation.</div>
+    <div class="cell">Investigate how everyday choices make a difference and create a bilingual presentation.</div>
+
 </div>
 
 </body>
